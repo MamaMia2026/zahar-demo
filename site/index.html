@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>zahăr – cofetărie contemporană (machetă demo)</title>
+<meta name="description" content="Machetă demo: cofetărie contemporană în care îți faci singur cutia de prăjituri sau calculezi un candy bar pentru eveniment.">
+<meta name="theme-color" content="#C8102E">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/fraunces-soft.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-soft-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#cutie">Sari la „Fă-ți cutia”</a>
+
+<header class="nv"><div class="wrap">
+  <a class="logo" href="#" aria-label="zahăr – începutul paginii">zahăr<i></i></a>
+  <nav class="lk" aria-label="Principal"><a href="#cutie">Fă-ți cutia</a><a href="#evenimente">Evenimente</a><a href="#bestsellers">Bestsellers</a><a href="#cum">Cum comanzi</a><a href="#contact">Contact</a></nav>
+  <button type="button" class="bag" id="bag" aria-haspopup="dialog">Comanda ta <b id="bagN">0</b></button>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div class="tx">
+    <span class="pill">● Comenzi până la 18:00 → livrăm mâine</span>
+    <h1 class="fr">Prăjituri mici.<br><span class="it">Bucurii mari.</span></h1>
+    <p>Cofetărie contemporană în Timișoara. Îți alegi singur ce pui în cutie, bucată cu bucată, și ți-o aducem acasă sau la birou.</p>
+    <div class="hrow"><a class="btn btn-w" href="#cutie">Fă-ți cutia →</a><a class="btn btn-o" href="#evenimente">Candy bar pentru eveniment</a></div>
+    <ul class="hmeta"><li><b>8</b>prăjituri de autor</li><li><b>12–15</b>lei bucata</li><li><b>24 h</b>de la comandă</li></ul>
+  </div>
+  <div class="ph">
+    <img src="img/hero-cutie.webp" srcset="img/hero-cutie-640.webp 640w, img/hero-cutie-960.webp 960w, img/hero-cutie.webp 1264w" sizes="(max-width: 760px) 100vw, 54vw" width="1264" height="848" fetchpriority="high" decoding="async" alt="Mână care ia o prăjitură dintr-o cutie roz cu 16 prăjituri mici">
+    <div class="sticker"><b>−15%</b>la prima<br>cutie de 24</div>
+  </div>
+</div></div>
+
+<div class="mq" aria-label="Prăjiturile noastre: Éclair ciocolată, Macaron zmeură, Choux fistic, Tartă lămâie, Mini cheesecake, Tartă caramel, Dom vișine, Paris-Brest" role="img"><div aria-hidden="true">
+  <p>Éclair ciocolată<span>✦</span>Macaron zmeură<span>✦</span>Choux fistic<span>✦</span>Tartă lămâie<span>✦</span>Mini cheesecake<span>✦</span>Tartă caramel<span>✦</span>Dom vișine<span>✦</span>Paris-Brest<span>✦</span></p>
+  <p>Éclair ciocolată<span>✦</span>Macaron zmeură<span>✦</span>Choux fistic<span>✦</span>Tartă lămâie<span>✦</span>Mini cheesecake<span>✦</span>Tartă caramel<span>✦</span>Dom vișine<span>✦</span>Paris-Brest<span>✦</span></p>
+</div></div>
+
+<section class="s wrap" id="cutie" aria-labelledby="cutieH">
+  <div class="sh"><div><span class="num">01 · Fă-ți cutia</span><h2 class="fr" id="cutieH">Tu alegi.<br><span class="it">Noi umplem.</span></h2></div>
+    <p>Alege mărimea cutiei, apoi apasă pe prăjituri ca să le pui în cutie. Apasă pe o prăjitură din cutie ca s-o scoți.</p></div>
+  <div class="bb">
+    <div>
+      <div class="sizes" id="sizes" role="group" aria-label="Mărimea cutiei"></div>
+      <div class="pal" id="pal" role="group" aria-label="Prăjituri"></div>
+      <div class="tools"><button type="button" id="rnd">🎲 Umple aleatoriu</button><button type="button" id="clr">Golește</button></div>
+      <p class="dnd-hint">Sfat: poți și să tragi prăjiturile direct în cutie.</p>
+    </div>
+    <div class="box">
+      <div class="lid"><h3 id="boxT">Cutia de 12</h3><span id="boxC" aria-live="polite">0 / 12</span></div>
+      <div class="tray" id="tray" role="group" aria-label="Cutia ta"></div>
+      <div class="bsum">
+        <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+        <div class="ribbon" id="ribbon" role="group" aria-label="Fundă și felicitare">
+          <button type="button" class="on" data-r="rosu" aria-pressed="true">🎀 Fundă roșie</button>
+          <button type="button" data-r="crem" aria-pressed="false">Fundă crem</button>
+          <button type="button" data-r="card" aria-pressed="false">+ Felicitare (5 lei)</button>
+        </div>
+        <div class="brow"><span id="boxInfo" class="note">Mai pune 12 prăjituri</span><b id="boxP">0 lei</b></div>
+        <button type="button" class="btn btn-c" id="addBox" style="width:100%">Adaugă cutia în comandă</button>
+        <p class="note">Prețuri de exemplu (demo). Cutia de 24 are −15%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s wrap" id="evenimente" aria-labelledby="evH"><div class="ev">
+  <div>
+    <span class="num">02 · Evenimente</span><h2 class="fr" id="evH">Candy bar<br><span class="it">fără bătăi de cap.</span></h2>
+    <p class="l">Spune-ne câți invitați ai și ce fel de eveniment e. Calculăm câte prăjituri îți trebuie și ce mix se potrivește.</p>
+    <div class="evf">
+      <div class="fl"><span class="lb" id="evTl">Tip eveniment</span>
+        <div class="seg" id="evT" role="group" aria-labelledby="evTl">
+          <button type="button" class="on" data-t="nunta" aria-pressed="true">Nuntă</button><button type="button" data-t="botez" aria-pressed="false">Botez</button><button type="button" data-t="corporate" aria-pressed="false">Corporate</button><button type="button" data-t="aniversare" aria-pressed="false">Aniversare</button></div></div>
+      <div class="fl"><label class="lb" for="evG">Număr invitați</label>
+        <div class="rng"><input type="range" id="evG" min="20" max="300" step="10" value="120"><output id="evGo" for="evG">120</output></div></div>
+      <div class="fl"><span class="lb" id="evPl">Prăjituri de persoană</span>
+        <div class="seg" id="evP" role="group" aria-labelledby="evPl">
+          <button type="button" data-pp="2" aria-pressed="false">2 · desert ușor</button><button type="button" class="on" data-pp="3" aria-pressed="true">3 · standard</button><button type="button" data-pp="4" aria-pressed="false">4 · candy bar generos</button></div></div>
+    </div>
+  </div>
+  <div class="evo" aria-live="polite">
+    <span class="num" style="margin:0">Propunerea noastră</span>
+    <div class="evt"><span>Prăjituri</span><b id="evN">360</b></div>
+    <div class="mix" id="evMix" aria-hidden="true"></div><div class="leg" id="evLeg"></div>
+    <div class="evr" id="evR"></div>
+    <div class="evt"><span>Total estimat</span><b id="evTot">0 lei</b></div>
+    <button type="button" class="btn btn-c" id="evBtn" aria-haspopup="dialog">Rezervă data →</button>
+    <p class="fine">Prețuri de exemplu. Pentru peste 150 de invitați, decor și aranjare la locație incluse. Avans 30% la rezervare.</p>
+  </div>
+</div></section>
+
+<section class="s wrap" id="bestsellers" aria-labelledby="bsH">
+  <div class="sh"><div><span class="num">03 · Bestsellers</span><h2 class="fr" id="bsH">Cele mai <span class="it">cerute.</span></h2></div><p>Le poți comanda și la bucată. Ajung în cutie individuală.</p></div>
+  <div class="bst" id="bst"></div>
+</section>
+
+<section class="s wrap" id="cum" aria-labelledby="cumH">
+  <div class="sh"><div><span class="num">04 · Cum comanzi</span><h2 class="fr" id="cumH">Trei pași<span class="it">, atât.</span></h2></div></div>
+  <ol class="how">
+    <li class="hw"><b aria-hidden="true">1</b><h3>Alegi online</h3><p>Cutie făcută de tine, bucăți separate sau candy bar pentru eveniment.</p></li>
+    <li class="hw"><b aria-hidden="true">2</b><h3>Alegi ziua</h3><p>Comenzile până la 18:00 pleacă a doua zi. Pentru evenimente, minimum 5 zile.</p></li>
+    <li class="hw"><b aria-hidden="true">3</b><h3>Primești acasă</h3><p>Livrare cu mașină frigorifică în Timișoara. Sau treci tu pe la noi.</p></li>
+  </ol>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <div class="big" aria-hidden="true">zahăr.</div>
+  <div class="row">
+    <div><h2>Atelier</h2>Str. Exemplului 3<br>Timișoara</div>
+    <div><h2>Program</h2>Marți – Duminică<br>09:00 – 20:00</div>
+    <div><h2>Contact</h2>0256 000 000<br>salut@exemplu.ro</div>
+    <div><h2>Livrare</h2>19 lei · gratuit peste 200 lei<br>Plată card sau numerar</div>
+  </div>
+  <div class="bot"><span>Machetă demo – brand, produse și prețuri de exemplu · Site realizat de <b>CristianWeb</b></span><a href="https://cristianweb.ro">Vreau un site ca acesta →</a></div>
+</div></footer>
+
+<!-- bara cutiei pe mobil -->
+<div class="mbar" id="mbar" inert><p id="mbT" aria-live="polite">Cutia de 12 · 0/12 · 0 lei</p><button type="button" id="mbBtn">Vezi cutia</button><i class="mf" id="mbFill"></i></div>
+
+<!-- coș -->
+<dialog class="drawer" id="cart" aria-labelledby="cartH">
+  <div class="dh"><h2 id="cartH">Comanda ta</h2><button type="button" class="x" id="cartClose" aria-label="Închide coșul">×</button></div>
+  <div class="cbody">
+    <div class="cempty" id="cartEmpty"><b>Coșul e gol.</b><span>Fă-ți o cutie sau adaugă prăjituri la bucată.</span><button type="button" class="btn btn-i" id="cartShop">Înapoi la prăjituri</button></div>
+    <ul class="clist" id="cartList"></ul>
+  </div>
+  <div class="cfoot" id="cartFoot" hidden>
+    <div class="free"><span id="cartHint"></span><div class="bar"><i id="cartHintBar"></i></div></div>
+    <div class="tl"><span>Subtotal</span><span id="cartSub">0 lei</span></div>
+    <div class="tl"><span>Livrare</span><span id="cartDel">19 lei</span></div>
+    <div class="tl tot"><span>Total</span><b id="cartTot">0 lei</b></div>
+    <button type="button" class="btn btn-c" id="cartPlace" aria-haspopup="dialog">Plasează comanda</button>
+  </div>
+</dialog>
+
+<!-- confirmare demo -->
+<dialog class="modal" id="checkout" aria-labelledby="coH">
+  <div class="dh"><h2 id="coH">Gata! (demo)</h2><button type="button" class="x" id="coClose" aria-label="Închide">×</button></div>
+  <div class="db">
+    <span class="demo-badge">Machetă – nu s-a trimis nimic</span>
+    <p>Pe site-ul real, aici ar urma confirmarea comenzii: date de livrare și plata. Nu se cer și nu se salvează date de card.</p>
+    <div class="rtot"><span id="coN">0 produse</span><span class="co-big" id="coTot">0 lei</span></div>
+    <div class="drow"><button type="button" class="btn btn-l" id="coClear">Golește coșul</button><button type="button" class="btn btn-i" onclick="this.closest('dialog').close()">Închide</button></div>
+  </div>
+</dialog>
+
+<!-- rezervare candy bar -->
+<dialog class="modal" id="rez" aria-labelledby="rzH">
+  <div class="dh"><h2 id="rzH">Rezervă data</h2><button type="button" class="x" id="rzClose" aria-label="Închide">×</button></div>
+  <form class="db" id="rzForm" novalidate>
+    <dl class="rsum" id="rzSum"></dl>
+    <div class="rtot"><span>Total estimat</span><b id="rzTot">0 lei</b></div>
+    <div class="form">
+      <label>Data evenimentului<input type="date" id="rzDate" required aria-describedby="rzMinTxt"><small id="rzMinTxt"></small></label>
+      <label>Locația<input type="text" id="rzLoc" required autocomplete="off" placeholder="ex. Restaurant X, Timișoara"></label>
+      <label>Nume<input type="text" id="rzName" required autocomplete="name"></label>
+      <label>Telefon<input type="tel" id="rzTel" required autocomplete="tel" inputmode="tel" pattern="[0-9 +().\-]{9,}" placeholder="07xx xxx xxx"></label>
+    </div>
+    <button type="submit" class="btn btn-c wa">Trimite pe WhatsApp →</button>
+    <p class="note">Se deschide WhatsApp cu mesajul completat. Avans 30% la confirmare. Prețuri de exemplu.</p>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
